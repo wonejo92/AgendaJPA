@@ -7,6 +7,7 @@ public class JPATelefonoDAO  extends JPAGenericDAO<Telefono, Integer> implements
 
 	public JPATelefonoDAO() {
 		// TODO Auto-generated constructor stub
+		super(Telefono.class);
 	}
 
 }
