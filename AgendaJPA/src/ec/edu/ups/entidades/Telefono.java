@@ -28,12 +28,13 @@ public class Telefono implements Serializable {
 	public Telefono() {
 		
 	}
-	public Telefono(int codigo, String numero, String tipo, String operadora) {
+	public Telefono(int codigo, String numero, String tipo, String operadora, Usuario cedulaU) {
 		super();
 		this.codigo=codigo;
 		this.numero= numero;
 		this.tipo=tipo;
 		this.operadora=operadora;
+		this.cedulaU = cedulaU;
 	}
 	
 //Getters and Setters.

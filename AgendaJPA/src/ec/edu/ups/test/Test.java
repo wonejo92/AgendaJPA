@@ -1,8 +1,14 @@
 package ec.edu.ups.test;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Persistence;
 
 import org.apache.tomcat.util.buf.UDecoder;
+
+import com.mysql.cj.Query;
 
 import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.GenericDAO;
@@ -35,6 +41,12 @@ public class Test {
 		usuario.setCorreo("leo12@hotmail.com");
 		usuario.setContrasena("12leonardo");
 		
+		System.out.println("Sentencia JPQL");
+		
+		System.out.println(usuarioDAO.BCedula("0105904312"));
+		
+		//System.out.println(usuarioDAO.findAll());
+		
 		
 		//System.out.println(usuario.toString());
 		
@@ -48,17 +60,14 @@ public class Test {
 		//System.out.println(usuario.toString().indexOf(1));
 		//telefonoDAO.create(telefono);
 		
+		
 	
 		
 		
-		System.out.println(telefono.toString());
+		//System.out.println(telefono.toString());
 		
 		
-		System.out.println("SE BUSCARA Y SE BORRARA EL TELEFONO");
-		telefono=telefonoDAO.read(4);
-		System.out.println(telefono);
-		System.out.println("SE ELIMINA EL TELEFONO");
-		telefonoDAO.delete(telefono);
+
 		
 
 	}

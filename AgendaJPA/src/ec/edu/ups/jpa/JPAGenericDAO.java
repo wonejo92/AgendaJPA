@@ -1,11 +1,19 @@
 package ec.edu.ups.jpa;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.sound.midi.Soundbank;
 
+import com.mysql.cj.Query;
+
+import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.GenericDAO;
+import ec.edu.ups.dao.UsuarioDAO;
+import ec.edu.ups.entidades.Telefono;
+import ec.edu.ups.entidades.Usuario;
 
 public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
     private Class<T> persistentClass;
@@ -27,7 +35,9 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	    if (em.getTransaction().isActive())
 		em.getTransaction().rollback();
 	}
-    }
+   }
+    
+
 
     @Override
     public T read(ID id) {
@@ -59,7 +69,7 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	    if (em.getTransaction().isActive())
 		em.getTransaction().rollback();
 	}
-    }
+  }
 
     @Override
     public void deleteByID(ID id) {
@@ -84,4 +94,45 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	return lista;
 
     }
+//Listar todos los Usuarios.
+	@Override
+	public List<Usuario> ListarU() {
+		// TODO Auto-generated method stub
+		String consulta="SELECT u FROM Usuario u";
+		@SuppressWarnings("unchecked")
+		List<Usuario> usuarios =em.createQuery(consulta).getResultList();
+		em.close();
+		return usuarios;
+	}
+//Validar por correo y contraseña.
+	
+	@Override
+	public Usuario validar(String correo, String contrasena) {
+		// TODO Auto-generated method stub
+		Usuario user = new Usuario();
+		String consulta =("SELECT u FROM Usuario u WHERE u.correo='"+correo+"'and u.contrasena='"+contrasena+"'");
+		try {
+			user= (Usuario) em.createQuery(consulta).getSingleResult();
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		return user;
+	}
+
+	@Override
+	public List<Telefono> BCedula(String cedula) {
+		// TODO Auto-generated method stub
+		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
+		Usuario usu=usuDAO.read(cedula);
+		String sql=("SELECT t FROM Telefono t where t.cedulaU.cedula='"+usu.getCedula()+"'");	
+		List<Telefono> list=em.createQuery(sql).getResultList();				
+		
+		return list;
+	}
+	
+//Nos permite buscar por cedula
+
+
+    	
 }
