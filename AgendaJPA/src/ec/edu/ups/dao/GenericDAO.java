@@ -27,7 +27,7 @@ public interface GenericDAO<T, ID> {
     
     public List<Telefono> BTelefonos(String cedula);
     
-    public List<Telefono> BCorreo(String cedula, String correo);
+    public List<Telefono> BCorreo(String correo);
 	
 	
 }

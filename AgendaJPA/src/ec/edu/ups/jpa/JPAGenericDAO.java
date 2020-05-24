@@ -144,10 +144,9 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 
 	@Override
 	//Permite buscar por correo
-	public List<Telefono> BCorreo(String cedula, String correo) {
+	public List<Telefono> BCorreo( String correo) {
 		UsuarioDAO usuDao= DAOFactory.getFactory().getUsuarioDAO();
-		Usuario usu = usuDao.read(cedula);
-		String sql=("SELECT t FROM Telefono t, Usuario u where u.cedula=t.cedulaU.cedula AND u.correo='"+usu.getCorreo()+"'");
+		String sql=("SELECT t FROM Telefono t, Usuario u where u.cedula=t.cedulaU.cedula AND u.correo='"+ correo+"'");
 		List<Telefono> listTelefonos=em.createQuery(sql).getResultList();
 		return listTelefonos;
 	}

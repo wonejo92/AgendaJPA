@@ -55,7 +55,7 @@ public class ServletListarCorreo extends HttpServlet {
 		System.out.println(cedula);
 		
 		
-		List<Telefono>lista=telfDAO.BCorreo(cedula, correo);
+		List<Telefono>lista=telfDAO.BCorreo( correo);
 		System.out.println(lista);
 		request.setAttribute("lst_telefonos", lista);
 		
