@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/AgendaJPA/JSPs/publico/style.css">
+  </head>
+  <body>
+   <form class="ServletLogin" action="/AgendaJPA/ServletLogin" method="post">
+<div class="login-box">
+  <h1>Login</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" placeholder="Username" name="user">
+  </div>
+
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" placeholder="Password" name="passwd">
+  </div>
+
+  <input type="submit" class="btn" value="Sign in">
+  </form>
+  <form action="/AgendaJPA/JSPs/publico/Register.jsp"></form>
+  <div>
+  <a href="/AgendaJPA/JSPs/publico/Register.jsp">
+  <input type="button" class="btn" value="Register"">
+  </a>
+  </div>
+  </form>
+</div>
+  </body>
+</html>
