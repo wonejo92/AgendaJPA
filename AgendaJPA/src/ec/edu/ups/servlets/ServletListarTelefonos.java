@@ -23,6 +23,7 @@ public class ServletListarTelefonos extends HttpServlet {
        
     /**
      * @see HttpServlet#HttpServlet()
+     * Se crea los servlts Correspondientes.
      */
     public ServletListarTelefonos() {
         super();

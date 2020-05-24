@@ -14,6 +14,7 @@ import ec.edu.ups.entidades.Usuario;
 
 /**
  * Servlet implementation class ServletLogin
+ * Se crea los servlts Correspondientes.
  */
 @WebServlet("/ServletLogin")
 public class ServletLogin extends HttpServlet {

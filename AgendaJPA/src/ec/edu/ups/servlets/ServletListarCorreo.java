@@ -28,6 +28,7 @@ public class ServletListarCorreo extends HttpServlet {
        
     /**
      * @see HttpServlet#HttpServlet()
+     * Se crea los servlts Correspondientes.
      */
     public ServletListarCorreo() {
         super();

@@ -24,6 +24,7 @@ public class ServletListarCedula extends HttpServlet {
        
     /**
      * @see HttpServlet#HttpServlet()
+     * Se crea los servlts Correspondientes.
      */
     public ServletListarCedula() {
         super();
