@@ -119,20 +119,41 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 		}
 		return user;
 	}
-
+	//Nos permite buscar por cedula
 	@Override
 	public List<Telefono> BCedula(String cedula) {
 		// TODO Auto-generated method stub
+		System.out.println();
 		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
 		Usuario usu=usuDAO.read(cedula);
 		String sql=("SELECT t FROM Telefono t where t.cedulaU.cedula='"+usu.getCedula()+"'");	
 		List<Telefono> list=em.createQuery(sql).getResultList();				
-		
 		return list;
 	}
+
+//Listar todos los numeros de un usuario
+	@Override
+	public List<Telefono> BTelefonos(String cedula) {
+		UsuarioDAO usuDao= DAOFactory.getFactory().getUsuarioDAO();
+		Usuario usu = usuDao.read(cedula);
+		String sql=("SELECT t FROM Telefono t where t.cedulaU.cedula='"+usu.getCedula()+"'");
+		List<Telefono> listTelefonos=em.createQuery(sql).getResultList();
+		// TODO Auto-generated method stub
+		return listTelefonos;
+	}
+
+	@Override
+	//Permite buscar por correo
+	public List<Telefono> BCorreo(String cedula, String correo) {
+		UsuarioDAO usuDao= DAOFactory.getFactory().getUsuarioDAO();
+		Usuario usu = usuDao.read(cedula);
+		String sql=("SELECT t FROM Telefono t, Usuario u where u.cedula=t.cedulaU.cedula AND u.correo='"+usu.getCorreo()+"'");
+		List<Telefono> listTelefonos=em.createQuery(sql).getResultList();
+		return listTelefonos;
+	}
 	
-//Nos permite buscar por cedula
 
 
-    	
+	
+ 	
 }

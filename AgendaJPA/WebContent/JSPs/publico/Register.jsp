@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/AgendaJPA/JSPs/publico/style.css">
   </head>
   <body>
-  <form action="/PracticaAgenda/ServletCrearUsuario" method="post">
+  <form action="/AgendaJPA/ServletCrearUsuario" method="post">
 <div class="login-box">
   <h1>Sign up</h1>
   <div class="textbox">

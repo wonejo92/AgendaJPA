@@ -35,15 +35,16 @@ public class Test {
 		
 		Usuario usuario = new Usuario();
 		//usuarioDAO.create(usuario);
-		usuario.setCedula("0105652747");
-		usuario.setNombre("Leonardo");
-		usuario.setApellido("Alvarado");
-		usuario.setCorreo("leo12@hotmail.com");
-		usuario.setContrasena("12leonardo");
+		usuario.setCedula("0105904313");
+		usuario.setNombre("Kevin");
+		usuario.setApellido("Cordero");
+		usuario.setCorreo("kevin12");
+		usuario.setContrasena("kevin12");
+		//usuarioDAO.create(usuario);
 		
-		System.out.println("Sentencia JPQL");
+		//System.out.println("Sentencia JPQL");
 		
-		System.out.println(usuarioDAO.BCedula("0105904312"));
+		//System.out.println(usuarioDAO.BCedula("0105904312"));
 		
 		//System.out.println(usuarioDAO.findAll());
 		
@@ -53,14 +54,16 @@ public class Test {
 		//Creacion del telefono
 		int codigo =1;
 		//telefono.setCodigo(codigo);
-		telefono.setNumero("0979395838");
+		telefono.setNumero("0991269100");
 		telefono.setTipo("Movil");
 		telefono.setOperadora("Claro");
 		telefono.setCedulaU(usuario);
+		//telefonoDAO.create(telefono);
 		//System.out.println(usuario.toString().indexOf(1));
 		//telefonoDAO.create(telefono);
 		
-		
+		telefonoDAO.BCedula("0105904313");
+		System.out.println(telefonoDAO.BCedula("0105904313"));
 	
 		
 		

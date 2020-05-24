@@ -48,7 +48,7 @@ public class ServletLogin extends HttpServlet {
 			HttpSession session=request.getSession(true);
 			session.setAttribute("cedula", codigo);
 			session.setAttribute("sesion", sesion);
-			System.out.println("sesion" + session.getAttribute("cedula"));
+			System.out.println(" sesion: " + session.getAttribute("cedula"));
 			if(user2.getCorreo()!= null) {
 				response.sendRedirect(request.getContextPath()+"/JSPs/Privado/Sentencias.jsp");
 			}else {

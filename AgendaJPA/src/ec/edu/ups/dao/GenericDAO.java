@@ -24,7 +24,11 @@ public interface GenericDAO<T, ID> {
     public Usuario validar(String correo,String contrasena);
     
     public List<Telefono> BCedula(String cedula);
-		
+    
+    public List<Telefono> BTelefonos(String cedula);
+    
+    public List<Telefono> BCorreo(String cedula, String correo);
+	
 	
 }
 

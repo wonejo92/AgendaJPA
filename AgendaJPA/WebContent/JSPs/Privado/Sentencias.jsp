@@ -28,9 +28,10 @@
 					</form>
 					<br />
 					<div class="form-group">
-						<form action="/AgendaJP/ServletListarCorreo" method="post">
+						<form action="/AgendaJPA/ServletListarCorreo" method="post">
+						<input type="hidden" name="Cedula" value="${ced}">
 							<label>Listar Por Correo:</label> <input type="text"
-								class="form-control" name="correo" placeholder="ejemplo@hotmail.com" '/>
+								class="form-control" name="correo" placeholder="Ejemplo@hotmail.com" '/>
 							<button type="submit" class="btn btn-secondary"
 							style="margin-right: 2em;">Buscar.
 							</button>
@@ -45,7 +46,7 @@
 
 		<div class="row marketing">
 			<div class="col-lg-6" style="text-align: left;">
-			<form action="/PracticaAgenda/ServletCrearTelefono" method="post" >
+			<form action="/AgendaJPA/ServletCrearTelefono" method="post" >
 			<input type="hidden" name="Cedula" value="${ced}">
 				<h4>
 					Datos Telefónicos <br />
@@ -92,7 +93,7 @@
 				</div>
 			</div>
 			<div class="col-lg-6">
-			<form action="/PracticaAgenda/ServletEliminar" method="post">
+			<form action="/AgendaJPA/ServletEliminatTelefono" method="post">
 			<button type="submit" class="btn btn-secondary"
 				style="margin-right: 2em;">Eliminar Numero.
 				</button>
@@ -107,7 +108,7 @@
 				<ul class="list-group">
 					<li class="list-group-item"><br/>
 						<div class="form-group">
-				<form action="/PracticaAgenda/Telefonos" method="post">
+				<form action="/AgendaJPA/ServletListarTelefonos" method="post">
 				<input type="hidden" name="Cedula" value="${ced}">
 				<button type="submit" class="btn btn-secondary"
 				style="margin-right: 2em;">Listar Numeros.</button>
