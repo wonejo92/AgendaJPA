@@ -39,7 +39,6 @@ public class ServletLogin extends HttpServlet {
 		System.out.println(user);
 		System.out.println(contra);
 	
-		//System.out.println(usuDAO.validar(user, contra));
 		Usuario user2 =usuDAO.validar(user, contra);
 		System.out.println(user2.toString());
 		if(user2 != null) {

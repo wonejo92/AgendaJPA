@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.entidades.Telefono;
+import ec.edu.ups.jpa.JPADAOFactory;
 
 /**
  * Servlet implementation class ServletListarCedula
@@ -47,8 +48,9 @@ public class ServletListarCedula extends HttpServlet {
 		System.out.println("Se recupera la cedula");
 		String cedula = request.getParameter("cedula");
 		System.out.println(cedula);
-		List<Telefono>lista =telfDAO.BCedula(cedula);
+		List<Telefono>lista =JPADAOFactory.getFactory().getTelefonoDAO().findAllByID(cedula);
 		System.out.println(lista);
+		request.setAttribute("lst_telefonos", lista);
 		request.getRequestDispatcher("/JSPs/Privado/Sentencias.jsp").forward(request, response);
 		doGet(request, response);
 	}

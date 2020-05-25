@@ -14,6 +14,7 @@ import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.entidades.Telefono;
 import ec.edu.ups.entidades.Usuario;
+import ec.edu.ups.jpa.JPADAOFactory;
 
 
 /**
@@ -54,8 +55,8 @@ public class ServletListarCorreo extends HttpServlet {
 		System.out.println(correo);
 		System.out.println(cedula);
 		
+		List<Telefono>lista= JPADAOFactory.getFactory().getTelefonoDAO().findALLByEmail(correo);
 		
-		List<Telefono>lista=telfDAO.BCorreo( correo);
 		System.out.println(lista);
 		request.setAttribute("lst_telefonos", lista);
 		

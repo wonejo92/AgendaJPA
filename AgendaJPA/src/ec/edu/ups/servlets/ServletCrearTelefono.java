@@ -11,6 +11,7 @@ import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.entidades.Telefono;
 import ec.edu.ups.entidades.Usuario;
+import ec.edu.ups.jpa.JPADAOFactory;
 
 /**
  * Servlet implementation class ServletCrearTelefono
@@ -64,20 +65,24 @@ public class ServletCrearTelefono extends HttpServlet {
 			request.getRequestDispatcher("/JSPs/Privado/Sentencias.jsp").forward(request, response);
 			break;
 		case "Modificar":
-			System.out.println("Se Modifica  el telefono");
 			
 			
 			String codigo=request.getParameter("codigoN");
-			codigof = Integer.parseInt(codigo);
+			System.out.println("Se Modifica  el telefono -->" + codigo);
+			int codigof2 = Integer.parseInt(codigo);
+			System.out.println(codigof2);
 			
-			Telefono telefono=telfDAO.read(codigof);
-			System.out.println(codigof);
+			//Telefono telefono=telfDAO.read(codigof);
+			Telefono telefono = JPADAOFactory.getFactory().getTelefonoDAO().read(codigof2);
+			
+			System.out.println(telefono);
+			//System.out.println(codigof);
 			String numero=request.getParameter("numeroN");
-			System.out.println(numero);
+			//System.out.println(numero);
 			String tipo =request.getParameter("tipoN");
-			System.out.println(tipo);
+			//System.out.println(tipo);
 			String operadora=request.getParameter("operadoraN");
-			System.out.println(operadora);
+			//System.out.println(operadora);
 			telefono.setNumero(numero);
 			telefono.setTipo(tipo);
 			telefono.setOperadora(operadora);
@@ -90,6 +95,5 @@ public class ServletCrearTelefono extends HttpServlet {
 			break;
 		
 	}
-		doGet(request, response);
 	}
 }

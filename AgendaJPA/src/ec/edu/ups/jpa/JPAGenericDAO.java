@@ -37,8 +37,6 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	}
    }
     
-
-
     @Override
     public T read(ID id) {
 	return em.find(persistentClass, id);
@@ -134,11 +132,13 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 //Listar todos los numeros de un usuario
 	@Override
 	public List<Telefono> BTelefonos(String cedula) {
+		
 		UsuarioDAO usuDao= DAOFactory.getFactory().getUsuarioDAO();
 		Usuario usu = usuDao.read(cedula);
 		String sql=("SELECT t FROM Telefono t where t.cedulaU.cedula='"+usu.getCedula()+"'");
 		List<Telefono> listTelefonos=em.createQuery(sql).getResultList();
 		// TODO Auto-generated method stub
+		System.out.println("ME LLAMAN!!!!!!! ------> " + listTelefonos);
 		return listTelefonos;
 	}
 
@@ -151,8 +151,6 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 		return listTelefonos;
 	}
 	
-
-
 	
  	
 }
