@@ -16,3 +16,11 @@ Desarrollo de una aplicación JEE basado en Servlets, JSP y JPA
 3.1.	Un usuario puede iniciar sesión usando su correo y contraseña.
 
 ![Practica01-Agenda Telefonica - Word 5_11_2020 4_15_29 PM](https://user-images.githubusercontent.com/46872883/82843006-430bee00-9ea1-11ea-8a05-5e8920732694.png)
+
+3.2. Registrar, modificar, eliminar, buscar y listar sus teléfonos
+
+![Practica01-Agenda Telefonica - Word 5_11_2020 4_18_27 PM](https://user-images.githubusercontent.com/46872883/82843045-7d758b00-9ea1-11ea-81b3-91ea98d91ecf.png)
+
+3.3.	Listar los números de teléfono de un usuario usando su número de cédula o correo electrónico
+
+![Practica01-Agenda Telefonica - Word 5_11_2020 4_20_23 PM](https://user-images.githubusercontent.com/46872883/82843082-a564ee80-9ea1-11ea-9296-dbbb1f9a3b5b.png)
